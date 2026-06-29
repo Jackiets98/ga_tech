@@ -3,7 +3,7 @@
 @section('title', 'Blog — LCA Express')
 
 @section('content')
-<section class="pt-12 pb-16 md:pt-16 md:pb-24 bg-slate-50">
+<section class="pt-12 pb-16 md:pt-16 md:pb-24 bg-lca-yellow-soft/40">
     <div class="container mx-auto px-4">
         <div class="max-w-2xl mx-auto text-center mb-12">
             <span class="section-tag">Latest News</span>

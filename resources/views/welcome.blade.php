@@ -8,15 +8,15 @@
     <div class="hero-pattern absolute inset-0 opacity-30"></div>
     <div class="container mx-auto px-4 relative z-10 py-20 md:py-32 lg:py-40">
         <div class="max-w-3xl">
-            <span class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-orange-300 text-sm font-medium mb-6">
-                <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+            <span class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lca-yellow/10 backdrop-blur-sm border border-lca-yellow/30 text-lca-yellow text-sm font-medium mb-6">
+                <span class="w-2 h-2 rounded-full bg-lca-yellow animate-pulse"></span>
                 Sabah Logistics company 物流公司
             </span>
             <h1 class="reveal reveal-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
                 Fastest &amp; Secured Logistics
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300"> Solution &amp; Services</span>
+                <span class="text-lca-yellow"> Solution &amp; Services</span>
             </h1>
-            <p class="reveal reveal-delay-2 text-lg md:text-xl text-slate-300 max-w-xl mb-8 leading-relaxed">
+            <p class="reveal reveal-delay-2 text-lg md:text-xl text-lca-gray-200 max-w-xl mb-8 leading-relaxed">
                 These professional, trustworthy, and aligned with your brand.
             </p>
             <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4">
@@ -81,7 +81,7 @@
                 </div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">{{ $service['title'] }}</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-5">{{ $service['desc'] }}</p>
-                <a href="#contact" class="inline-flex items-center gap-2 text-orange-600 font-semibold text-sm hover:gap-3 transition-all">
+                <a href="#contact" class="inline-flex items-center gap-2 text-lca-gray-900 font-semibold text-sm hover:text-lca-yellow-dark hover:gap-3 transition-all">
                     Learn More
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
@@ -92,14 +92,14 @@
 </section>
 
 {{-- About --}}
-<section id="about" class="py-16 md:py-24 bg-slate-50">
+<section id="about" class="py-16 md:py-24 bg-lca-yellow-soft/40">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
                 <span class="section-tag reveal">Our Company</span>
                 <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                     Sabah Logistics company
-                    <span class="font-chinese text-orange-600">物流公司</span>
+                    <span class="font-chinese text-lca-gray-900">物流公司</span>
                 </h2>
                 <p class="reveal reveal-delay-2 text-slate-600 leading-relaxed mb-6">
                     We are a forward-thinking organization focused on delivering high-quality products and services that meet the evolving needs of our customers. Our mission is to innovate, grow sustainably, and create value for all stakeholders through teamwork, integrity, and excellence.
@@ -113,7 +113,7 @@
             <div class="space-y-4">
                 <div class="vision-card reveal">
                     <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+                        <div class="w-10 h-10 rounded-lg bg-lca-yellow-soft text-lca-gray-900 flex items-center justify-center shrink-0">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                         </div>
                         <div>
@@ -173,17 +173,17 @@
 </section>
 
 {{-- Contact --}}
-<section id="contact" class="py-16 md:py-24 bg-slate-900 relative overflow-hidden">
+<section id="contact" class="contact-section py-16 md:py-24 relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-lca-yellow rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-lca-gray-700 rounded-full blur-3xl"></div>
     </div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             <div>
                 <span class="section-tag section-tag-dark reveal">Get In Touch</span>
                 <h2 class="reveal reveal-delay-1 text-3xl md:text-4xl font-bold text-white mb-6">Contact Us</h2>
-                <p class="reveal reveal-delay-2 text-slate-400 leading-relaxed mb-8">Have a question about our logistics services? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                <p class="reveal reveal-delay-2 text-lca-gray-300 leading-relaxed mb-8">Have a question about our logistics services? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
 
                 <div class="space-y-5">
                     <div class="contact-info-item reveal reveal-delay-2">
@@ -192,7 +192,7 @@
                         </div>
                         <div>
                             <h4 class="text-white font-semibold text-sm">Address</h4>
-                            <a href="https://maps.app.goo.gl/YN5rEZHo91rFA5Nf6" target="_blank" rel="noopener" class="text-slate-400 text-sm hover:text-orange-400 transition-colors">Jalan Timur, 91000 Tawau, Sabah, Malaysia.</a>
+                            <a href="https://maps.app.goo.gl/YN5rEZHo91rFA5Nf6" target="_blank" rel="noopener" class="text-lca-gray-300 text-sm hover:text-lca-yellow transition-colors">Jalan Timur, 91000 Tawau, Sabah, Malaysia.</a>
                         </div>
                     </div>
                     <div class="contact-info-item reveal reveal-delay-3">
@@ -201,7 +201,7 @@
                         </div>
                         <div>
                             <h4 class="text-white font-semibold text-sm">Phone</h4>
-                            <a href="tel:+60198933455" class="text-slate-400 text-sm hover:text-orange-400 transition-colors">+60 19-893 3455</a>
+                            <a href="tel:+60198933455" class="text-lca-gray-300 text-sm hover:text-lca-yellow transition-colors">+60 19-893 3455</a>
                         </div>
                     </div>
                     <div class="contact-info-item reveal reveal-delay-4">
@@ -210,7 +210,7 @@
                         </div>
                         <div>
                             <h4 class="text-white font-semibold text-sm">Email</h4>
-                            <a href="mailto:info@lcaexpress.com" class="text-slate-400 text-sm hover:text-orange-400 transition-colors">info@lcaexpress.com</a>
+                            <a href="mailto:info@lcaexpress.com" class="text-lca-gray-300 text-sm hover:text-lca-yellow transition-colors">info@lcaexpress.com</a>
                         </div>
                     </div>
                     <div class="contact-info-item reveal reveal-delay-4">
@@ -219,7 +219,7 @@
                         </div>
                         <div>
                             <h4 class="text-white font-semibold text-sm">Business Hours</h4>
-                            <p class="text-slate-400 text-sm">Monday – Saturday, 8:00 a.m. – 5:00 p.m.</p>
+                            <p class="text-lca-gray-300 text-sm">Monday – Saturday, 8:00 a.m. – 5:00 p.m.</p>
                         </div>
                     </div>
                 </div>

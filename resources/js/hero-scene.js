@@ -20,16 +20,16 @@ export function initHeroScene(container) {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
     container.appendChild(renderer.domElement);
 
-    scene.fog = new THREE.FogExp2(0x0f172a, 0.035);
+    scene.fog = new THREE.FogExp2(0x666666, 0.035);
 
     const ambient = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambient);
 
-    const keyLight = new THREE.DirectionalLight(0xf97316, 1.2);
+    const keyLight = new THREE.DirectionalLight(0xffeb00, 1.2);
     keyLight.position.set(5, 8, 6);
     scene.add(keyLight);
 
-    const fillLight = new THREE.DirectionalLight(0x3b82f6, 0.4);
+    const fillLight = new THREE.DirectionalLight(0x999999, 0.4);
     fillLight.position.set(-6, 2, -4);
     scene.add(fillLight);
 
@@ -157,7 +157,7 @@ function createPackage(size) {
 
     const bodyGeo = new THREE.BoxGeometry(w, h, d);
     const bodyMat = new THREE.MeshPhysicalMaterial({
-        color: 0x1e293b,
+        color: 0x555555,
         metalness: 0.3,
         roughness: 0.6,
         transparent: true,
@@ -167,12 +167,12 @@ function createPackage(size) {
     group.add(body);
 
     const edges = new THREE.EdgesGeometry(bodyGeo);
-    const lineMat = new THREE.LineBasicMaterial({ color: 0xf97316, transparent: true, opacity: 0.9 });
+    const lineMat = new THREE.LineBasicMaterial({ color: 0xffeb00, transparent: true, opacity: 0.9 });
     const wireframe = new THREE.LineSegments(edges, lineMat);
     group.add(wireframe);
 
     const stripeGeo = new THREE.BoxGeometry(w * 1.01, h * 0.08, d * 1.01);
-    const stripeMat = new THREE.MeshBasicMaterial({ color: 0xea580c, transparent: true, opacity: 0.7 });
+    const stripeMat = new THREE.MeshBasicMaterial({ color: 0xd4c800, transparent: true, opacity: 0.7 });
     const stripe = new THREE.Mesh(stripeGeo, stripeMat);
     stripe.position.y = h * 0.15;
     group.add(stripe);
@@ -195,7 +195,7 @@ function createRoutes(points, isMobile) {
         const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
         const geo = new THREE.BufferGeometry().setFromPoints(curve.getPoints(32));
         const mat = new THREE.LineBasicMaterial({
-            color: 0x60a5fa,
+            color: 0x999999,
             transparent: true,
             opacity: 0.25,
         });
@@ -217,7 +217,7 @@ function createParticles(count) {
     geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
     const mat = new THREE.PointsMaterial({
-        color: 0xf97316,
+        color: 0xffeb00,
         size: 0.04,
         transparent: true,
         opacity: 0.6,
@@ -231,7 +231,7 @@ function createGlobeWireframe() {
     const group = new THREE.Group();
     const geo = new THREE.IcosahedronGeometry(2.2, 2);
     const wireMat = new THREE.MeshBasicMaterial({
-        color: 0x334155,
+        color: 0x777777,
         wireframe: true,
         transparent: true,
         opacity: 0.25,
@@ -240,7 +240,7 @@ function createGlobeWireframe() {
     group.add(globe);
 
     const ringGeo = new THREE.TorusGeometry(2.8, 0.015, 8, 64);
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0xf97316, transparent: true, opacity: 0.4 });
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0xffeb00, transparent: true, opacity: 0.4 });
     const ring = new THREE.Mesh(ringGeo, ringMat);
     ring.rotation.x = Math.PI / 2.5;
     group.add(ring);
