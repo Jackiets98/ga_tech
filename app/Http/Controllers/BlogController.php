@@ -2,33 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Collection;
+use App\Models\Blog;
 
 class BlogController extends Controller
 {
     public function index()
     {
         return view('blog.index', [
-            'blogs' => $this->blogs(),
+            'blogs' => Blog::latestPublished()->get(),
         ]);
     }
 
     public function show(string $slug)
     {
-        $blog = $this->blogs()->firstWhere('slug', $slug);
-
-        abort_unless($blog, 404);
+        $blog = Blog::published()->where('slug', $slug)->firstOrFail();
 
         return view('blog.show', [
             'blog' => $blog,
-            'related' => $this->blogs()->where('slug', '!=', $slug)->take(3)->values(),
+            'related' => Blog::latestPublished()
+                ->where('slug', '!=', $slug)
+                ->take(3)
+                ->get(),
         ]);
-    }
-
-    private function blogs(): Collection
-    {
-        return collect(config('blogs'))
-            ->sortByDesc('date')
-            ->values();
     }
 }

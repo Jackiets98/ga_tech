@@ -370,3 +370,21 @@ html {
         transition: none;
     }
 }
+
+/* ── Admin panel ── */
+.admin-label {
+    @apply block text-sm font-semibold text-lca-gray-800 mb-1.5;
+}
+
+.admin-input {
+    @apply w-full px-4 py-2.5 rounded-xl border border-lca-gray-200 bg-white text-lca-gray-900
+           focus:outline-none focus:ring-2 focus:ring-lca-yellow focus:border-transparent transition-all;
+}
+
+.admin-link {
+    @apply text-sm font-semibold text-lca-gray-900 hover:text-lca-yellow-dark transition-colors;
+}
+
+.admin-link-danger {
+    @apply text-sm font-semibold text-red-600 hover:text-red-800 transition-colors;
+}
