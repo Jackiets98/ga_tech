@@ -1,7 +1,6 @@
 #!/bin/sh
 set -x
 
-# Railway injects PORT — must listen on 0.0.0.0, not 127.0.0.1
 PORT="${PORT:-8000}"
 HOST="0.0.0.0"
 
@@ -16,6 +15,16 @@ chmod -R 775 storage bootstrap/cache 2>/dev/null || true
 if [ "${DB_CONNECTION:-sqlite}" = "sqlite" ]; then
   touch database/database.sqlite
 fi
+
+if [ ! -f public/build/manifest.json ]; then
+  echo "FATAL: public/build/manifest.json missing — CSS/JS will not load"
+  echo "Run: npm run build  OR  fix Docker frontend build stage"
+  ls -la public/build 2>/dev/null || echo "public/build/ does not exist"
+  exit 1
+fi
+
+echo "Vite assets OK:"
+ls -la public/build/assets/ | head -5
 
 if [ -z "$APP_KEY" ]; then
   echo "FATAL: APP_KEY is not set in Railway Variables"
@@ -33,5 +42,4 @@ echo "=========================================="
 echo " Listening on http://${HOST}:${PORT}"
 echo "=========================================="
 
-# Use PHP built-in server — binds correctly for Railway
-exec php -S "${HOST}:${PORT}" -t public public/index.php
+exec php artisan serve --host="$HOST" --port="$PORT" --no-reload

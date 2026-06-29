@@ -41,6 +41,10 @@ COPY . .
 
 COPY --from=frontend /app/public/build ./public/build
 
+RUN test -f public/build/manifest.json \
+    && test -f public/images/lca-logo.png \
+    || (echo "FATAL: missing built assets or logo" && exit 1)
+
 RUN composer dump-autoload --optimize \
     && mkdir -p storage/framework/{cache,sessions,views} storage/logs bootstrap/cache database \
     && chmod -R 775 storage bootstrap/cache \
