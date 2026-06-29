@@ -43,15 +43,12 @@ COPY --from=frontend /app/public/build ./public/build
 
 RUN composer dump-autoload --optimize \
     && mkdir -p storage/framework/{cache,sessions,views} storage/logs bootstrap/cache database \
-    && chmod -R 775 storage bootstrap/cache
+    && chmod -R 775 storage bootstrap/cache \
+    && chmod +x docker/start.sh
 
 ENV PORT=8000
+ENV HOST=0.0.0.0
 
 EXPOSE 8000
 
-CMD php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache \
-    && php artisan migrate --force \
-    && php artisan db:seed --force \
-    && php artisan serve --host=0.0.0.0 --port=${PORT}
+CMD ["sh", "docker/start.sh"]
